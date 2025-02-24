@@ -50,7 +50,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
               output = (num1 * num2).toString();
               break;
             case '/':
-              output = (num2 != 0) ? (num1 / num2).toString() : "Error";
+              output = (num2 != 0) ? (num1 / num2).toStringAsFixed(8) : "Error";
               break;
           }
           input = output;
