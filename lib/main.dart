@@ -10,7 +10,7 @@ class CalculatorApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Calculator',
-      theme: ThemeData.dark(),
+      theme: ThemeData.dark(), // sets background color of the calculator to black.
       home: CalculatorScreen(),
     );
   }
@@ -22,8 +22,8 @@ class CalculatorScreen extends StatefulWidget {
 }
 
 class _CalculatorScreenState extends State<CalculatorScreen> {
-  String input = '';
-  String output = '';
+  String input = '';  // Variable to collect user input
+  String output = ''; // Variable to collect output
   double num1 = 0;
   double num2 = 0;
   String operator = '';
@@ -50,7 +50,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
               output = (num1 * num2).toString();
               break;
             case '/':
-              output = (num2 != 0) ? (num1 / num2).toStringAsFixed(8) : "Error";
+              output = (num2 != 0) ? (num1 / num2).toStringAsFixed(5) : "Error";
               break;
           }
           input = output;
@@ -123,7 +123,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
           ])
             Row(
               children: row.map((button) {
-                return buildButton(button, color: button == "=" ? Colors.orange : Colors.grey[800]!);
+                return buildButton(button, color: button == "=" ? const Color.fromARGB(255, 9, 129, 227) : const Color.fromARGB(255, 198, 22, 201)!);
               }).toList(),
             )
         ],
